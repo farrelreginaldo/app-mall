@@ -1,3 +1,4 @@
+
 require ('./models/dbConnect')
 
 const express = require('express')
@@ -6,6 +7,7 @@ const bodyParser = require("body-parser");
 const path = require('path')
 
 var session = require('express-session')
+
 const userauth = require('./controllers/userauth');
 const auth = require('./utils/authlogin')
 
@@ -18,8 +20,6 @@ const Kurir = require('./controllers/kurirController');
 const kategori = require('./controllers/kategoriController');
 const request = require("supertest");
 const admin = require('./controllers/adminController')
-
-
 
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -56,6 +56,8 @@ app.use('/distributor', Distributor);
 app.use('/kurir', Kurir);
 app.use('/kategori',kategori)
 app.use('/produk', routerProduk);
+
+app.use('/kategori', kategori);
 
 app.use('/produk', routerProduk);
 
