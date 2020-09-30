@@ -12,7 +12,7 @@ const userauth = require('./controllers/userauth');
 const auth = require('./utils/authlogin')
 
 const exampleRouter = require('./controllers/example.Controller');
-const exampleUtils = require('./utils/example.Utils')
+// const exampleUtils = require('./utils/example.Utils')
 
 const routerProduk = require('./controllers/routerProduk');
 const Distributor = require('./controllers/distributorController');
@@ -31,13 +31,8 @@ app.use((req, res, next) => {
 }); //PENTING - Mencegah CSRF Attack
 
 
-
 app.set('view engine', 'hbs');
 // app.set('views', path.join(__dirname, 'views/template'))
-// app.use(express.static('views/template'));
-
-
-// app.set('view engine', 'pug');
 app.use(express.static('views'));
 
 app.use(session({
@@ -49,7 +44,7 @@ app.use(session({
 app.use('/', userauth);
 app.use('/admin',auth.is_admin,admin);
 
-app.use('/', exampleRouter);
+app.use('/example', exampleRouter);
 // app.use('/admin',exampleUtils,exampleRouter);
 
 app.use('/distributor', Distributor);
