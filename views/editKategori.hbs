@@ -302,19 +302,19 @@
                                         <h3 class="text-center title-2">Form Edit Kategori</h3>
                                     </div>
                                     <hr>
-                                    {{#each data}}
-                                    <form action="/kategori/update/{{this.id}}" method="post" novalidate="novalidate">
+                                {{!-- {{#each data}} --}}
+                                    <form action="/kategori/update/{{data._id}}" method="post" novalidate="novalidate">
                                     
                                         <div class="form-group">
                                             <label for="cc-payment" class="control-label mb-1">Nama kategori</label>
                                             <input id="cc-pament" name="nama" type="text" class="form-control"
-                                                aria-required="true" aria-invalid="false" value="{{this.nama}}"
+                                                aria-required="true" aria-invalid="false" value="{{data.nama}}"
                                                 placeholder="Nama kategori">
                                         </div>
                                         <div class="form-group has-success">
                                             <label for="cc-name" class="control-label mb-1">Sub</label>
                                             <input id="cc-name" name="sub" type="text"
-                                                class="form-control cc-name valid" value="{{this.sub}}" data-val="true"
+                                                class="form-control cc-name valid" value="{{data.sub}}" data-val="true"
                                                 data-val-required="Mohon isi Sub Kategori" autocomplete="cc-name"
                                                 aria-required="true" aria-invalid="false"
                                                 aria-describedby="cc-name-error" placeholder="Sub kategori">
@@ -336,7 +336,7 @@
                                             </button>
                                         
                                     </form>
-                                    {{/each}}
+                                    {{!-- {{/each}} --}}
                                 </div>
                             </div>
                         </div>
