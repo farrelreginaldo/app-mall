@@ -5,7 +5,6 @@ const Produk = require('../models/modelProduk')
 router.get('/',async (req,res)=>{ 
     try{
         const produk = await Produk.find({active:true})
-        // res.status(200).json({message: 'Sukses', data:produk})
         res.render('produk', {
             data:produk
         })

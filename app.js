@@ -12,7 +12,7 @@ const userauth = require('./controllers/userauth');
 const auth = require('./utils/authlogin')
 
 const exampleRouter = require('./controllers/example.Controller');
-const exampleUtils = require('./utils/example.Utils')
+//const exampleUtils = require('./utils/example.Utils')
 
 const routerProduk = require('./controllers/routerProduk');
 const Distributor = require('./controllers/distributorController');
