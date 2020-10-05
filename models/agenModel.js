@@ -1,12 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
-const kurir = new Schema({
+const agen = new Schema({
     nama: {
-        type: String,
-        require: true
-    },
-    noHp: {
         type: String,
         require: true
     },
@@ -14,10 +10,14 @@ const kurir = new Schema({
         type: String,
         require: true
     },
-    area: {
+    noHp: {
+        type: String,
+        require: true
+    },
+    pemilik: {
         type: String,
         require: true
     },
 });
 
-module.exports = mongoose.model('kurir', kurir)
+module.exports = mongoose.model('agen', agen)
