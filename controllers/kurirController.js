@@ -30,6 +30,7 @@ router.post("/tambah", async(req, res) => {
 router.put("/edit/:id", getKurir, async(req, res) => {
     try {
         const editKurir = await res.kurir.set(req.body);
+        res.json({ message: "Berhasil Mengubah Data Distributor", data : editKurir});
         res.json({ message: "Berhasil Mengubah Data Distributor", editKurir});
     } catch (err) {
         res.status(400).json({message: err.message});

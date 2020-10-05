@@ -291,7 +291,7 @@
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">kategori table </h5>
+                                <h5 class="modal-title" id="exampleModalLongTitle">Kategori Table </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -299,44 +299,41 @@
                             <div class="modal-body">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <h3 class="text-center title-2">Form Edit Kategori</h3>
+                                        <h3 class="text-center title-2">Form Edit kategori</h3>
                                     </div>
                                     <hr>
-                                {{!-- {{#each data}} --}}
-                                    <form action="/kategori/update/{{data._id}}" method="post" novalidate="novalidate">
+                                    
+                                    <form action="/kategori/update/{{this.id}}" method="post" novalidate="novalidate">
                                     
                                         <div class="form-group">
-                                            <label for="cc-payment" class="control-label mb-1">Nama kategori</label>
+                                            <label for="cc-payment" class="control-label mb-1">Nama Kategori</label>
                                             <input id="cc-pament" name="nama" type="text" class="form-control"
-                                                aria-required="true" aria-invalid="false" value="{{data.nama}}"
-                                                placeholder="Nama kategori">
+                                                aria-required="true" aria-invalid="false" value="{{this.nama}}"
+                                                placeholder="Nama Kategori">
                                         </div>
+                                        <hr>
                                         <div class="form-group has-success">
-                                            <label for="cc-name" class="control-label mb-1">Sub</label>
+                                            <label for="cc-name" class="control-label mb-1">Sub Kategori</label>
                                             <input id="cc-name" name="sub" type="text"
-                                                class="form-control cc-name valid" value="{{data.sub}}" data-val="true"
+                                                class="form-control cc-name valid" value="{{this.sub}}" data-val="true"
                                                 data-val-required="Mohon isi Sub Kategori" autocomplete="cc-name"
                                                 aria-required="true" aria-invalid="false"
-                                                aria-describedby="cc-name-error" placeholder="Sub kategori">
+                                                aria-describedby="cc-name-error" placeholder="Sub Kategori">
                                             <span class="help-block field-validation-valid" data-valmsg-for="cc-name"
                                                 data-valmsg-replace="true"></span>
                                         </div>
-                                        
-                                        
-                                       
-                                     
-                                       
+                                        <hr>
+
+                                        <div>
                                             <button id="payment-button" type="submit"
                                                 class="btn btn-lg btn-info btn-block">
-                                                <i class="fa fa-paper-plane fa-lg"></i>
-                                                
-                                                &nbsp;
+                                                <i class="fa fa-paper-plane fa-lg"></i>&nbsp;
                                                 <span>Simpan</span>
                                                 {{!-- <span id="payment-button-sending" style="display:none;">Sending…</span> --}}
                                             </button>
-                                        
+                                        </div>
                                     </form>
-                                    {{!-- {{/each}} --}}
+                                   
                                 </div>
                             </div>
                         </div>

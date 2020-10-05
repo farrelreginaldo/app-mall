@@ -3,7 +3,8 @@ const User = require('../models/user')
 const router = express.Router()
 
 router.get('/login',(req,res)=>{
-    res.send('login')
+    // res.send('login')
+    res.render('login')
 })
 
 router.post('/login',async(req,res)=>{
@@ -16,7 +17,7 @@ router.post('/login',async(req,res)=>{
             req.session.level = user.level;
         if (user.level =='admin') {
             req.session.admin = true
-            res.send(req.session.level)
+            res.redirect('/admin')
         }else{
             req.session.logged_in = true
             res.send(req.session.level)
@@ -24,6 +25,10 @@ router.post('/login',async(req,res)=>{
     } catch (err) {
         
     }
+})
+
+router.get('/register',(req,res)=>{
+    res.render('register')
 })
 
 router.post('/register',async (req,res)=>{
