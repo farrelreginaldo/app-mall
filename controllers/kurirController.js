@@ -6,7 +6,10 @@ const Kurir = require('../models/kurirModel');
 router.get("/", async(req, res) => {
     try {
         const kurir = await Kurir.find();
-        res.json(kurir);
+        // res.json(kurir);
+        res.render('kurir', {
+            data: kurir
+        });
     } catch (err) {
         res.status(500).json({message: err.message});
     }
@@ -21,7 +24,8 @@ router.post("/tambah", async(req, res) => {
     });
     try {
         const newKurir = await kurir.save();
-        res.status(201).json({ message: "Berhasil Tambah Data Distributor", newKurir });
+        // res.status(201).json({ message: "Berhasil Tambah Data Distributor", newKurir });
+        res.redirect('/kurir')
     } catch (err) {
         res.status(400).json({message: err.message});
     }
@@ -32,6 +36,7 @@ router.put("/edit/:id", getKurir, async(req, res) => {
         const editKurir = await res.kurir.set(req.body);
         res.json({ message: "Berhasil Mengubah Data Distributor", data : editKurir});
         res.json({ message: "Berhasil Mengubah Data Distributor", editKurir});
+
     } catch (err) {
         res.status(400).json({message: err.message});
     }

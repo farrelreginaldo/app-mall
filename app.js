@@ -16,6 +16,7 @@ const exampleRouter = require('./controllers/example.Controller');
 const routerProduk = require('./controllers/routerProduk');
 const Distributor = require('./controllers/distributorController');
 const Kurir = require('./controllers/kurirController');
+const Agen = require('./controllers/agenController');
 const kategori = require('./controllers/kategoriController');
 const pembelian = require('./routes/pembelian.Router');
 const penjualan = require('./routes/penjualan.Router');
@@ -44,20 +45,18 @@ app.use(session({
 app.use('/', userauth);
 app.use('/admin',auth.is_admin,admin);
 
-app.use('/distributor', Distributor);
-app.use('/kurir', Kurir);
-app.use('/kategori',kategori)
-app.use('/produk', routerProduk);
+// app.use('/example', exampleRouter);
+// app.use('/admin',exampleUtils,exampleRouter);
 
 app.use('/distributor', Distributor);
 app.use('/kurir', Kurir);
+app.use('/agen', Agen);
 app.use('/kategori',kategori)
 app.use('/produk', routerProduk);
+
 
 app.use('/pembelian', pembelian);
 app.use('/penjualan', penjualan);
-
-app.use('/produk', routerProduk);
 
 app.listen(process.env.PORT || 3000,() => {
     console.log(`App Started on PORT ${process.env.PORT || 3000}`);
